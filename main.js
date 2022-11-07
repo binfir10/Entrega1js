@@ -14,6 +14,9 @@ Pizzas.forEach(pizza => {
     }
 });
 
+//const pizzasImpares = Pizzas.filter(pizza => pizza.id % 2 !== 0);
+//pizzasImpares.forEach(pizza => console.log(`La pizza de ${pizza.nombre} tiene un id impar`));
+
 
 //EJERCICIO B
 if (Pizzas.some(mayor => mayor.precio < 600)) {
@@ -21,7 +24,21 @@ if (Pizzas.some(mayor => mayor.precio < 600)) {
 } else {
     console.log('No existen Pizzas menores a $600');
 }
-toString
+
+//const precioMenorA600 = (pizza) => pizza.precio < 600;
+//if (Pizzas.some(precioMenorA600)) {
+//    console.log('Existen Pizzas menores a $600');
+//} else {
+//    console.log('No existen Pizzas menores a $600');
+//}
+
+//const pizzaMenor600 = pizza.find(precioMenorA600);
+//if (pizzaMenor600) {
+//    console.log('Existen Pizzas menores a $600');
+//} else {
+//    console.log('No existen Pizzas menores a $600');
+//}
+
 //EJERCICIO C
 Pizzas.forEach(pizza => console.log(`La pizza de ${pizza.nombre} tiene un precio de $${pizza.precio}`));
 
@@ -31,10 +48,6 @@ Pizzas.forEach((piza) => {
     piza.ingredientes.forEach((ingrediente) =>
         console.log(`- ${ingrediente}`));
 })
-
-//console.log(
-//  `La pizza de ${piza.nombre} tiene: ${piza.ingredientes.join(", ")}`
-//);
 
 
 
