@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:rgb(29, 29, 29);
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+}
+
+#form {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.input-number{
+    width: 80px;
+    display: flex;
+    background-color: rgb(127, 206, 255);
+    border: none;
+    padding: 15px 10px;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+}
+
+
+.submit__btn {
+    background-color: rgb(127, 206, 255);
+    border: 0px solid;
+    padding: 10px 40px;
+    border-radius: 8px;
+    color:#1d1b1b;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.submit__btn:hover{
+    background-color: rgb(64, 142, 157);
+    color: white;
+}
+
+#result-container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    gap: 20px;
+    padding: 30px;
+
+}
+
+.pizza-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+}
+
+.nombre-result {
+    font-weight: 500;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: "Poppins";
+        align-items: center;
+
+}
+
+
+.nombre-result, .error-title {
+    font-family: "Poppins";
+    font-size: 25px;
+    font-weight: 800;
+    color: #ffffff
+}
+
+.ingredientes-result {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 17px;
+    color: #ababab;
+    letter-spacing: 0.5px;
+}
+
+.precio-result {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(127, 206, 255);
+    letter-spacing: 1px;
+}
+
+.img-res {
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgb(127, 206, 255);
+    box-shadow: 0px 0px 40px rgb(42, 92, 124);
+
+}
+.img-error {
+    width: 200px;
+    height: 200px;
+}
+
+
+
