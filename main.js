@@ -78,7 +78,6 @@ const input = document.querySelector(".input-number");
 //Busca en el array de pizza una que coincida con el valor pasado, devuelve el valor o undefined si no existe
 const searchPizza = (value) => Pizzas.find((pizza) => pizza.id === value);
 
-
 const showEmptyError = () => {
     resultContainer.innerHTML = `
             <img src="./assets/Pizzas/error.png" alt="" class="img-error">
@@ -86,6 +85,7 @@ const showEmptyError = () => {
             <h2 class="error-title"> Por favor, Ingresé número para validar</h2>
         </div>
     `;
+    localStorage.clear()
 };
 
 const renderResult = (pizza) => {
@@ -96,6 +96,8 @@ const renderResult = (pizza) => {
                 <h2 class="error-title"> No existe una pizza con el número ingresado, Vuelva a intentar</h2>
         </div>
         `;
+        localStorage.clear()
+
     } else {
         resultContainer.innerHTML = `
             <img src="${pizza.imagen}" alt="" class="img-res">
@@ -105,25 +107,33 @@ const renderResult = (pizza) => {
                 <h3 class="precio-result">Precio: $${pizza.precio}</h3>
         </div>
         `;
+        localStorage.setItem("ultimaPizza", JSON.stringify(pizza));
     }
 };
+
+
 const submitSearch = (e) => {
     e.preventDefault(); //evitar evento defecto de tipo submit que recarga pagina
     const searchedValue = input.value;
-     //trae el valor del input
-    
     if (!searchedValue) {
-        //si esta vacio llama a la funcion vacia
         showEmptyError();
         return;
     }
-    //crea const buscar pizza y verifica el valor convertido en num y llama a funcion
     const searchedPizza = searchPizza(Number(searchedValue));
     renderResult(searchedPizza);
 };
 
+const saveLocalStorage = () => {
+    if (localStorage.getItem('ultimaPizza')) {
+        let pza = JSON.parse(localStorage.getItem('ultimaPizza'));
+        renderResult(pza);
+    }
+}
+
 const init = () => {
+    saveLocalStorage();
     form.addEventListener("submit", submitSearch);
+    
 };
 
 init();
